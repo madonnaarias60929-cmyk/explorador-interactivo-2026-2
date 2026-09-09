@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Explorador de Recetas</title>
+
+    <meta
+        name="description"
+        content="Explorador interactivo de recetas de cocina utilizando la API TheMealDB."
+    >
+
+    <meta
+        property="og:title"
+        content="Explorador de Recetas"
+    >
+
+    <meta
+        property="og:description"
+        content="Explorador interactivo de recetas de cocina utilizando la API TheMealDB."
+    >
+
+    <meta
+        property="og:image"
+        content="https://www.themealdb.com/images/media/meals/tqtywx1468317395.jpg"
+    >
+
+    <meta
+        property="og:type"
+        content="website"
+    >
+</head>
+
+<body>
+
+    <header>
+        <h1>Explorador de Recetas</h1>
+
+        <p>
+            Explora recetas de cocina utilizando la API TheMealDB.
+        </p>
+    </header>
+
+
+    <nav>
+        <a href="#inicio">Inicio</a>
+
+        <a href="#favoritos">Favoritos</a>
+
+        <a href="#acerca-de">Acerca de</a>
+    </nav>
+
+
+    <main id="inicio">
+
+        <section>
+            <h2>Buscar recetas</h2>
+
+            <form>
+
+                <label for="busqueda">
+                    Buscar receta:
+                </label>
+
+                <input
+                    type="text"
+                    id="busqueda"
+                    name="busqueda"
+                    placeholder="Escribe una receta"
+                >
+
+
+                <label for="filtro">
+                    Filtrar por categoría:
+                </label>
+
+                <select
+                    id="filtro"
+                    name="filtro"
+                >
+                    <option value="todas">
+                        Todas
+                    </option>
+
+                    <option value="beef">
+                        Beef
+                    </option>
+
+                    <option value="chicken">
+                        Chicken
+                    </option>
+
+                    <option value="dessert">
+                        Dessert
+                    </option>
+
+                    <option value="seafood">
+                        Seafood
+                    </option>
+                </select>
+
+
+                <button type="submit">
+                    Buscar
+                </button>
+
+            </form>
+        </section>
+
+
+        <section>
+
+            <h2>Recetas destacadas</h2>
+
+
+            <article>
+
+                <h3>
+                    Spicy Arrabiata Penne
+                </h3>
+
+                <p>
+                    Receta de pasta italiana disponible en TheMealDB.
+                </p>
+
+                <img
+                    src="https://www.themealdb.com/images/media/meals/ustsqw1468250014.jpg"
+                    alt="Spicy Arrabiata Penne"
+                >
+
+            </article>
+
+
+            <article>
+
+                <h3>
+                    Spaghetti alla Carbonara
+                </h3>
+
+                <p>
+                    Receta de pasta disponible en TheMealDB.
+                </p>
+
+                <img
+                    src="https://www.themealdb.com/images/media/meals/llcbn01574260722.jpg"
+                    alt="Spaghetti alla Carbonara"
+                >
+
+            </article>
+
+
+            <article>
+
+                <h3>
+                    Chocolate Gateau
+                </h3>
+
+                <p>
+                    Receta de postre de chocolate disponible en TheMealDB.
+                </p>
+
+                <img
+                    src="https://www.themealdb.com/images/media/meals/tqtywx1468317395.jpg"
+                    alt="Chocolate Gateau"
+                >
+
+            </article>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            Madonna Arias Agudelo
+        </p>
+
+        <p>
+            Tecnología en Sistemas Informáticos -
+            Universidad de Caldas
+        </p>
+
+        <p>
+            API utilizada:
+
+            <a
+                href="https://www.themealdb.com/api.php"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                TheMealDB
+            </a>
+        </p>
+
+    </footer>
+
+</body>
+
+</html
