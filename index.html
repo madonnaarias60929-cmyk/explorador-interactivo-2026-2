@@ -3,214 +3,113 @@
 
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Explorador de Recetas</title>
+    <meta name="description" content="Explorador interactivo de recetas de cocina utilizando la API TheMealDB.">
+    <meta property="og:title" content="Explorador de Recetas">
+    <meta property="og:description" content="Explorador interactivo de recetas de cocina utilizando la API TheMealDB.">
+    <meta property="og:image" content="https://www.themealdb.com/images/media/meals/tqtywx1468317395.jpg">
+    <meta property="og:type" content="website">
 
-    <meta
-        name="description"
-        content="Explorador interactivo de recetas de cocina utilizando la API TheMealDB."
-    >
-
-    <meta
-        property="og:title"
-        content="Explorador de Recetas"
-    >
-
-    <meta
-        property="og:description"
-        content="Explorador interactivo de recetas de cocina utilizando la API TheMealDB."
-    >
-
-    <meta
-        property="og:image"
-        content="https://www.themealdb.com/images/media/meals/tqtywx1468317395.jpg"
-    >
-
-    <meta
-        property="og:type"
-        content="website"
-    >
+    <!-- Enlace a la hoja de estilos de la semana 4 -->
+    <link rel="stylesheet" href="estilos/main.css">
 </head>
 
 <body>
 
-    <header>
+    <!-- Contenedor principal estructurado con CSS Grid -->
+    <div class="layout-grid">
 
-        <h1>Explorador de Recetas</h1>
+        <!-- Barra de navegación con Flexbox -->
+        <nav class="navbar">
+            <div class="logo">🍳 RecetasApp</div>
+            <div class="nav-links">
+                <a href="#inicio">Inicio</a>
+                <a href="#favoritos">Favoritos</a>
+                <a href="#acerca-de">Acerca de</a>
+            </div>
+        </nav>
 
-        <p>
-            Explora recetas de cocina utilizando la API TheMealDB.
-        </p>
+        <header class="header-main">
+            <h1>Explorador de Recetas</h1>
+            <p>Explora recetas de cocina utilizando la API TheMealDB.</p>
+        </header>
 
-    </header>
+        <main id="inicio" class="main-content">
 
+            <!-- Sección de búsqueda con Flexbox -->
+            <section class="search-section">
+                <h2>Buscar recetas</h2>
+                <form class="search-form">
+                    <div class="form-group">
+                        <label for="busqueda">Buscar receta:</label>
+                        <input type="text" id="busqueda" name="busqueda" placeholder="Escribe una receta">
+                    </div>
 
-    <nav>
+                    <div class="form-group">
+                        <label for="filtro">Filtrar por categoría:</label>
+                        <select id="filtro" name="filtro">
+                            <option value="todas">Todas</option>
+                            <option value="beef">Beef</option>
+                            <option value="chicken">Chicken</option>
+                            <option value="dessert">Dessert</option>
+                            <option value="seafood">Seafood</option>
+                        </select>
+                    </div>
 
-        <a href="#inicio">Inicio</a>
+                    <button type="submit" class="btn-buscar">Buscar</button>
+                </form>
+            </section>
 
-        <a href="#favoritos">Favoritos</a>
+            <!-- Sección de recetas destacadas con CSS Grid (Responsive) -->
+            <section class="recipes-section">
+                <h2>Recetas destacadas</h2>
 
-        <a href="#acerca-de">Acerca de</a>
+                <div class="recipes-grid">
+                    <!-- Artículo 1 -->
+                    <article class="recipe-card">
+                        <img src="https://www.themealdb.com/images/media/meals/ustsqw1468250014.jpg" alt="Spicy Arrabiata Penne">
+                        <div class="card-content">
+                            <h3>Spicy Arrabiata Penne</h3>
+                            <p>Una receta de pasta italiana con una salsa de tomate de sabor picante, ideal para quienes disfrutan de sabores intensos.</p>
+                            <button class="btn-detalle">Ver Receta</button>
+                        </div>
+                    </article>
 
-    </nav>
+                    <!-- Artículo 2 -->
+                    <article class="recipe-card">
+                        <img src="https://www.themealdb.com/images/media/meals/llcbn01574260722.jpg" alt="Spaghetti alla Carbonara">
+                        <div class="card-content">
+                            <h3>Spaghetti alla Carbonara</h3>
+                            <p>Este plato italiano combina pasta, huevo, queso y panceta para crear una preparación clásica y muy reconocida.</p>
+                            <button class="btn-detalle">Ver Receta</button>
+                        </div>
+                    </article>
 
+                    <!-- Artículo 3 -->
+                    <article class="recipe-card">
+                        <img src="https://www.themealdb.com/images/media/meals/tqtywx1468317395.jpg" alt="Chocolate Gateau">
+                        <div class="card-content">
+                            <h3>Chocolate Gateau</h3>
+                            <p>Un postre de chocolate de textura suave que resulta perfecto para acompañar una celebración o disfrutar después de una comida.</p>
+                            <button class="btn-detalle">Ver Receta</button>
+                        </div>
+                    </article>
+                </div>
+            </section>
 
-    <main id="inicio">
+        </main>
 
-        <section>
+        <footer class="footer">
+            <p>Madonna Arias Agudelo</p>
+            <p>Tecnología en Sistemas Informáticos - Universidad de Caldas</p>
+            <p>
+                API utilizada: 
+                <a href="https://www.themealdb.com/api.php" target="_blank" rel="noopener noreferrer">TheMealDB</a>
+            </p>
+        </footer>
 
-            <h2>Buscar recetas</h2>
-
-            <form>
-
-                <label for="busqueda">
-                    Buscar receta:
-                </label>
-
-                <input
-                    type="text"
-                    id="busqueda"
-                    name="busqueda"
-                    placeholder="Escribe una receta"
-                >
-
-
-                <label for="filtro">
-                    Filtrar por categoría:
-                </label>
-
-                <select
-                    id="filtro"
-                    name="filtro"
-                >
-
-                    <option value="todas">
-                        Todas
-                    </option>
-
-                    <option value="beef">
-                        Beef
-                    </option>
-
-                    <option value="chicken">
-                        Chicken
-                    </option>
-
-                    <option value="dessert">
-                        Dessert
-                    </option>
-
-                    <option value="seafood">
-                        Seafood
-                    </option>
-
-                </select>
-
-
-                <button type="submit">
-                    Buscar
-                </button>
-
-            </form>
-
-        </section>
-
-
-        <section>
-
-            <h2>Recetas destacadas</h2>
-
-
-            <article>
-
-                <h3>
-                    Spicy Arrabiata Penne
-                </h3>
-
-                <p>
-                    Una receta de pasta italiana con una salsa de tomate
-                    de sabor picante, ideal para quienes disfrutan de sabores intensos.
-                </p>
-
-                <img
-                    src="https://www.themealdb.com/images/media/meals/ustsqw1468250014.jpg"
-                    alt="Spicy Arrabiata Penne"
-                >
-
-            </article>
-
-
-            <article>
-
-                <h3>
-                    Spaghetti alla Carbonara
-                </h3>
-
-                <p>
-                    Este plato italiano combina pasta, huevo, queso y panceta
-                    para crear una preparación clásica y muy reconocida.
-                </p>
-
-                <img
-                    src="https://www.themealdb.com/images/media/meals/llcbn01574260722.jpg"
-                    alt="Spaghetti alla Carbonara"
-                >
-
-            </article>
-
-
-            <article>
-
-                <h3>
-                    Chocolate Gateau
-                </h3>
-
-                <p>
-                    Un postre de chocolate de textura suave que resulta perfecto
-                    para acompañar una celebración o disfrutar después de una comida.
-                </p>
-
-                <img
-                    src="https://www.themealdb.com/images/media/meals/tqtywx1468317395.jpg"
-                    alt="Chocolate Gateau"
-                >
-
-            </article>
-
-        </section>
-
-    </main>
-
-
-    <footer>
-
-        <p>
-            Madonna Arias Agudelo
-        </p>
-
-        <p>
-            Tecnología en Sistemas Informáticos -
-            Universidad de Caldas
-        </p>
-
-        <p>
-            API utilizada:
-
-            <a
-                href="https://www.themealdb.com/api.php"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                TheMealDB
-            </a>
-
-        </p>
-
-    </footer>
+    </div>
 
 </body>
-
-</html>
+</html>git status
