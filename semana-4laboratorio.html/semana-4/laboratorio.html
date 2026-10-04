@@ -1,0 +1,282 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Laboratorio: Flexbox vs Grid</title>
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h2 {
+            margin-top: 30px;
+        }
+
+        .tarjeta {
+            background: #4f46e5;
+            color: white;
+            padding: 16px;
+            border-radius: 8px;
+        }
+
+        .caja {
+            background: #3b82f6;
+            color: white;
+            padding: 16px;
+            border-radius: 8px;
+        }
+
+        section {
+            border: 2px dashed #999;
+            padding: 10px;
+        }
+
+
+        /* ===== EXPERIMENTO 1: siete tarjetas con FLEX ===== */
+
+        .con-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .con-flex .tarjeta {
+            flex: 1 1 250px;
+        }
+
+
+        /* ===== EXPERIMENTO 1: las mismas siete con GRID ===== */
+
+        .con-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 16px;
+        }
+
+
+        /* ===== EXPERIMENTO 2: el eje que se voltea ===== */
+
+        .ejes {
+            display: flex;
+            min-height: 300px;
+            gap: 12px;
+            justify-content: center;
+            align-items: flex-end;
+        }
+
+
+        /* ===== EXPERIMENTO 3: la palabra que rompe el layout ===== */
+
+        /*
+        Prueba estas opciones una por una:
+
+        min-width: 0;
+
+        overflow-wrap: break-word;
+
+        overflow: hidden;
+        */
+
+
+        /* ===== EXPERIMENTO 4: mover elementos con GRID ===== */
+
+        .pagina {
+            display: grid;
+            gap: 10px;
+            min-height: 320px;
+
+            grid-template-columns: 200px 1fr;
+
+            grid-template-rows: auto 1fr auto;
+
+            grid-template-areas:
+                "cabecera cabecera"
+                "lateral contenido"
+                "pie pie";
+        }
+
+        .pagina > header {
+            grid-area: cabecera;
+        }
+
+        .pagina > aside {
+            grid-area: lateral;
+        }
+
+        .pagina > main {
+            grid-area: contenido;
+        }
+
+        .pagina > footer {
+            grid-area: pie;
+        }
+
+        .pagina > * {
+            background: #eef2ff;
+            border: 1px solid #c7d2fe;
+            padding: 16px;
+        }
+
+
+        /* ===== EXPERIMENTO 5: GAP VS MARGIN ===== */
+
+        .con-margin {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .con-margin .tarjeta {
+            flex: 1 1 200px;
+            margin: 8px;
+        }
+
+        .con-gap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .con-gap .tarjeta {
+            flex: 1 1 200px;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <h1>Laboratorio: Flexbox vs Grid</h1>
+
+    <p>
+        Exploración práctica de Flexbox y Grid.
+    </p>
+
+
+    <!-- ===== EXPERIMENTO 1: siete tarjetas con FLEX ===== -->
+
+    <h2>1a · Siete tarjetas con FLEX</h2>
+
+    <section class="con-flex">
+
+        <div class="tarjeta">1</div>
+        <div class="tarjeta">2</div>
+        <div class="tarjeta">3</div>
+        <div class="tarjeta">4</div>
+        <div class="tarjeta">5</div>
+        <div class="tarjeta">6</div>
+        <div class="tarjeta">7</div>
+
+    </section>
+
+
+    <!-- ===== EXPERIMENTO 1: las mismas siete con GRID ===== -->
+
+    <h2>1b · Las mismas siete con GRID</h2>
+
+    <section class="con-grid">
+
+        <div class="tarjeta">1</div>
+        <div class="tarjeta">2</div>
+        <div class="tarjeta">3</div>
+        <div class="tarjeta">4</div>
+        <div class="tarjeta">5</div>
+        <div class="tarjeta">6</div>
+        <div class="tarjeta">7</div>
+
+    </section>
+
+
+    <!-- ===== EXPERIMENTO 2: el eje que se voltea ===== -->
+
+    <h2>2 · El eje que se voltea</h2>
+
+    <section class="ejes">
+
+        <div class="caja">A</div>
+        <div class="caja">B</div>
+        <div class="caja">C</div>
+
+    </section>
+
+
+    <!-- ===== EXPERIMENTO 3: la palabra que rompe el layout ===== -->
+
+    <h2>3 · La palabra que rompe el layout</h2>
+
+    <section class="con-grid">
+
+        <div class="tarjeta">
+                   electroencefalografista
+        </div>
+
+        <div class="tarjeta">
+            2
+        </div>
+
+        <div class="tarjeta">
+            3
+        </div>
+
+    </section>
+
+
+    <!-- ===== EXPERIMENTO 4: mover elementos con GRID ===== -->
+
+    <h2>4 · Mover elementos con Grid</h2>
+
+    <div class="pagina">
+
+        <header>
+            Cabecera
+        </header>
+
+        <aside>
+            Lateral
+        </aside>
+
+        <main>
+            Contenido
+        </main>
+
+        <footer>
+            Pie
+        </footer>
+
+    </div>
+
+
+    <!-- ===== EXPERIMENTO 5: GAP VS MARGIN ===== -->
+
+    <h2>5a · Separadas con MARGIN</h2>
+
+    <section class="con-margin">
+
+        <div class="tarjeta">1</div>
+        <div class="tarjeta">2</div>
+        <div class="tarjeta">3</div>
+
+    </section>
+
+
+    <h2>5b · Separadas con GAP</h2>
+
+    <section class="con-gap">
+
+        <div class="tarjeta">1</div>
+        <div class="tarjeta">2</div>
+        <div class="tarjeta">3</div>
+
+    </section>
+
+</body>
+
+</html>
