@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorador de Recetas</title>
+    <link rel="stylesheet" href="./css/estilos.css">
+</head>
+<body>
+
+    <!-- Cabecera / Navbar -->
+    <header class="cabecera">
+        <a href="#" class="logo">🍳 RecetasCraft</a>
+        <input type="search" class="buscador" placeholder="Buscar receta, ingrediente..." aria-label="Buscar recetas">
+        <nav>
+            <ul class="menu">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Categorías</a></li>
+                <li><a href="#">Guardadas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Barra Lateral de Filtros -->
+    <aside class="filtros">
+        <h2>Filtros</h2>
+        <fieldset>
+            <legend>Categoría</legend>
+            <label><input type="checkbox" name="cat" value="pasta" checked> Pastas</label>
+            <label><input type="checkbox" name="cat" value="postres"> Postres</label>
+            <label><input type="checkbox" name="cat" value="ensaladas"> Ensaladas</label>
+        </fieldset>
+        <fieldset>
+            <legend>Tiempo de preparación</legend>
+            <label><input type="radio" name="tiempo" value="15"> Menos de 15 min</label>
+            <label><input type="radio" name="tiempo" value="30" checked> 15 a 30 min</label>
+            <label><input type="radio" name="tiempo" value="60"> Más de 30 min</label>
+        </fieldset>
+    </aside>
+
+    <!-- Grilla de Resultados -->
+    <main class="resultados">
+        <article class="tarjeta-receta">
+            <img src="https://images.unsplash.com/photo-1556761223-4c4282c73f77?w=500&auto=format&fit=crop&q=60" alt="Fettuccine Alfredo">
+            <h3>Fettuccine Alfredo</h3>
+            <p>Clásica pasta italiana con cremosa salsa de mantequilla y queso parmesano.</p>
+            <span class="tiempo">⏱️ 20 min</span>
+            <button type="button">Ver receta</button>
+        </article>
+
+        <article class="tarjeta-receta">
+            <img src="https://images.unsplash.com/photo-1612874742237-6526221588e3?w=500&auto=format&fit=crop&q=60" alt="Spaghetti Carbonara">
+            <h3>Spaghetti Carbonara</h3>
+            <p>Receta tradicional romana con huevo, guanciale, queso pecorino y pimienta negra recién molida.</p>
+            <span class="tiempo">⏱️ 25 min</span>
+            <button type="button">Ver receta</button>
+        </article>
+
+        <article class="tarjeta-receta">
+            <img src="https://images.unsplash.com/photo-1574894709920-11b28e7367e3?w=500&auto=format&fit=crop&q=60" alt="Lasaña Bolognesa">
+            <h3>Lasaña a la Bolognesa</h3>
+            <p>Capas de pasta artesanal, ragú tradicional de carne y salsa bechamel horneada a la perfección.</p>
+            <span class="tiempo">⏱️ 45 min</span>
+            <button type="button">Ver receta</button>
+        </article>
+
+        <article class="tarjeta-receta">
+            <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=500&auto=format&fit=crop&q=60" alt="Raviolis de Espinaca">
+            <h3>Raviolis de Espinaca y Ricotta</h3>
+            <p>Pasta rellena hecha en casa bañada en mantequilla de salvia fresca.</p>
+            <span class="tiempo">⏱️ 30 min</span>
+            <button type="button">Ver receta</button>
+        </article>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="pie">
+        <div>
+            <h4>Explorador de Recetas</h4>
+            <p>Proyecto del curso Web 1 · 2026</p>
+        </div>
+        <div>
+            <h4>Categorías populares</h4>
+            <a href="#">Pastas cortas</a>
+            <a href="#">Pastas largas</a>
+            <a href="#">Pastas rellenas</a>
+        </div>
+        <div>
+            <h4>Recursos</h4>
+            <a href="#">API de cocina</a>
+            <a href="#">Documentación</a>
+        </div>
+    </footer>
+
+</body>
+</html>

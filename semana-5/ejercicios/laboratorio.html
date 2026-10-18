@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laboratorio semana 5</title>
+  <style>
+    body { font-family: system-ui, sans-serif; padding: 1.5rem; }
+    h2 { margin-top: 2.5rem; }
+    section { border: 2px dashed #94a3b8; padding: 10px; }
+    .celda { background: #4f46e5; color: #fff; padding: 1rem; border-radius: 8px;
+             font-weight: 700; text-align: center; }
+
+    /* ===== EXPERIMENTO 2: mobile-first (A) contra desktop-first (B) ===== */
+    .grilla { display: grid; gap: 1rem; }
+
+    /* A · la base es el móvil y las media queries AGREGAN */
+    .a { grid-template-columns: 1fr; }
+    /* B · la base es el escritorio y las media queries DESHACEN */
+    .b { grid-template-columns: repeat(4, 1fr); }
+
+    /* Las cuatro media queries (A: las dos primeras · B: las dos últimas) */
+    @media (min-width: 768px)  { .a { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .a { grid-template-columns: repeat(4, 1fr); } }
+    @media (max-width: 1023px) { .b { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 767px)  { .b { grid-template-columns: 1fr; } }
+
+    /* ===== EXPERIMENTO 5: el salto de las imágenes ===== */
+    .par { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .par img { width: 100%; }
+    .con-reserva img { aspect-ratio: 3 / 2; object-fit: cover; }
+  </style>
+</head>
+<body>
+  <h1>Laboratorio semana 5</h1>
+
+  <h2>Experimento 2 · Versión A (mobile-first)</h2>
+  <section>
+    <div class="grilla a">
+      <div class="celda">1</div>
+      <div class="celda">2</div>
+      <div class="celda">3</div>
+      <div class="celda">4</div>
+      <div class="celda">5</div>
+      <div class="celda">6</div>
+      <div class="celda">7</div>
+      <div class="celda">8</div>
+    </div>
+  </section>
+
+  <h2>Experimento 2 · Versión B (desktop-first)</h2>
+  <section>
+    <div class="grilla b">
+      <div class="celda">1</div>
+      <div class="celda">2</div>
+      <div class="celda">3</div>
+      <div class="celda">4</div>
+      <div class="celda">5</div>
+      <div class="celda">6</div>
+      <div class="celda">7</div>
+      <div class="celda">8</div>
+    </div>
+  </section>
+
+  <h2>Experimento 5 · El salto de las imágenes</h2>
+  <div class="par">
+    <article class="sin-reserva">
+      <h3>Sin reservar espacio</h3>
+      <img src="https://picsum.photos/1200/800?random=1" alt="Foto de prueba">
+      <p>Este texto va justo debajo de la imagen. ¿Se mueve cuando la imagen llega?</p>
+    </article>
+    <article class="con-reserva">
+      <h3>Con aspect-ratio</h3>
+      <img src="https://picsum.photos/1200/800?random=1" alt="Foto de prueba">
+      <p>Este texto va justo debajo de la imagen. ¿Se mueve cuando la imagen llega?</p>
+    </article>
+  </div>
+</body>
+</html>
