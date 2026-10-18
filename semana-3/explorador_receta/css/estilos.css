@@ -1,0 +1,153 @@
+/* --- 1. Reset Universal (Regla de oro del Box Model) --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* --- 2. Variables CSS (:root) --- */
+:root {
+  --primario: #e65100;        /* Naranja gastronómico */
+  --primario-hover: #bf360c;  /* Tono oscuro para hover */
+  --texto: #263238;           /* Gris oscuro legible */
+  --fondo-suave: #fff8f0;     /* Fondo crema */
+  --blanco: #ffffff;
+  --borde: #ffe0b2;           /* Borde suave */
+  --sombra: rgba(0, 0, 0, 0.08);
+}
+
+/* --- 3. Estilos Globales --- */
+body {
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;            /* 16px base accesible */
+  line-height: 1.6;
+  color: var(--texto);
+  background-color: var(--fondo-suave);
+  margin: 0;
+  padding: 0;
+}
+
+/* --- 4. Encabezado Principal y Navegación --- */
+.header-principal {
+  background-color: var(--primario);
+  color: var(--blanco);
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.header-principal h1 {
+  margin: 0 0 0.5rem 0;
+}
+
+.header-principal p {
+  margin: 0;
+  opacity: 0.9;
+}
+
+.navegacion {
+  background-color: #37474f;
+  text-align: center;
+  padding: 0.75rem;
+}
+
+.navegacion a {
+  color: var(--blanco);
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: bold;
+}
+
+.navegacion a:hover {
+  color: var(--borde);
+  text-decoration: underline;
+}
+
+/* --- 5. Contenedor Central --- */
+main {
+  max-width: 720px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* --- 6. Componente Tarjeta --- */
+.tarjeta {
+  background-color: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px var(--sombra);
+}
+
+/* --- 7. Estilos de las Tarjetas de Recetas e Imágenes --- */
+.receta-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow: hidden;
+}
+
+.receta-card img {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.receta-contenido h3 {
+  margin-top: 0;
+  color: var(--primario);
+}
+
+/* --- 8. Formulario Cuidado --- */
+form p {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: bold;
+}
+
+input[type="text"], select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--borde);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--primario);
+  box-shadow: 0 0 0 3px rgba(230, 81, 0, 0.15);
+}
+
+button {
+  background-color: var(--primario);
+  color: var(--blanco);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  width: 100%;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: var(--primario-hover);
+}
+
+/* --- 9. Footer --- */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: var(--primario);
+}

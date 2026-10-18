@@ -1,0 +1,173 @@
+/* --- 1. Reset Universal (Box Model) --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* --- 2. Variables CSS (:root) --- */
+:root {
+  --primario: #4f46e5;        /* Índigo elegante */
+  --primario-hover: #4338ca;  /* Tono para hover */
+  --texto: #1e293b;           /* Gris oscuro para lectura */
+  --fondo-suave: #f8fafc;     /* Fondo suave */
+  --blanco: #ffffff;
+  --borde: #e2e8f0;           /* Borde sutil */
+  --sombra: rgba(0, 0, 0, 0.08);
+}
+
+/* --- 3. Estilos Globales --- */
+body {
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;            /* 16px base accesible */
+  line-height: 1.6;
+  color: var(--texto);
+  background-color: var(--fondo-suave);
+  margin: 0;
+  padding: 0;
+}
+
+/* --- 4. Contenedor Principal (Columna Centrada) --- */
+main {
+  max-width: 720px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* --- 5. Componente Tarjeta Base --- */
+.tarjeta {
+  background-color: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px var(--sombra);
+}
+
+.tarjeta h2 {
+  margin-top: 0;
+  color: var(--primario);
+  border-bottom: 2px solid var(--fondo-suave);
+  padding-bottom: 0.5rem;
+}
+
+/* --- 6. Tarjeta de Perfil / Header --- */
+.tarjeta-perfil {
+  background-color: var(--blanco);
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 12px var(--sombra);
+}
+
+.tarjeta-perfil img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--primario);
+  margin-bottom: 1rem;
+}
+
+.tarjeta-perfil h1 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.75rem;
+  color: var(--texto);
+}
+
+.tarjeta-perfil p {
+  margin: 0 0 1rem 0;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* Navegación interna del Perfil */
+.tarjeta-perfil nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.tarjeta-perfil nav a {
+  color: var(--primario);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+}
+
+.tarjeta-perfil nav a:hover {
+  background-color: #e0e7ff;
+}
+
+/* --- 7. Tablas con Efecto Cebra --- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+th, td {
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--borde);
+  text-align: left;
+}
+
+th {
+  background-color: var(--primario);
+  color: var(--blanco);
+}
+
+tr:nth-child(even) {
+  background-color: #f1f5f9; /* Efecto cebra en filas pares */
+}
+
+/* --- 8. Formulario de Contacto --- */
+form div {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--borde);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primario);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+button[type="submit"] {
+  background-color: var(--primario);
+  color: var(--blanco);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  width: 100%;
+  transition: background-color 0.2s;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--primario-hover);
+}

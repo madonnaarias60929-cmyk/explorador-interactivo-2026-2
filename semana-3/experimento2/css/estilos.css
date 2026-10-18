@@ -1,0 +1,18 @@
+.caja { 
+  width: 300px; 
+  padding: 24px; 
+  border: 2px solid #e65100; 
+  margin: 16px; 
+  background-color: #fff8f0;
+  font-family: sans-serif;
+}
+
+/* El valor por defecto de CSS */
+.a { 
+  box-sizing: content-box; 
+}   
+
+/* El que usamos en el curso y en nuestras hojas de estilo */
+.b { 
+  box-sizing: border-box; 
+}

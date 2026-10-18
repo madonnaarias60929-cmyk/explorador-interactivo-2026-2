@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explorador de Recetas — Web 1</title>
+  <meta name="description" content="Busca y explora recetas deliciosas de todo el mundo utilizando TheMealDB.">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Explorador de Recetas Culinarias">
+  <meta property="og:description" content="Encuentra ingredientes, instrucciones y fotos de tus platos favoritos.">
+  <meta property="og:image" content="https://www.themealdb.com/images/media/meals/ustsqw1468250014.jpg">
+  <meta property="og:type" content="website">
+  <!-- Enlace al archivo CSS de la Semana 3 -->
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <header class="header-principal">
+    <h1>Explorador de Recetas</h1>
+    <p>Tu asistente culinario interactivo</p>
+  </header>
+
+  <nav class="navegacion">
+    <a href="#buscar">Buscar</a>
+    <a href="#resultados">Resultados</a>
+    <a href="#acerca">Acerca de</a>
+  </nav>
+
+  <main>
+    <!-- Formulario dentro de una Tarjeta -->
+    <section id="buscar" class="tarjeta">
+      <h2>Busca una receta</h2>
+      <form>
+        <p>
+          <label for="nombre-receta">Nombre del plato:</label>
+          <input type="text" id="nombre-receta" name="nombre" required placeholder="Ej: Arrabiata">
+        </p>
+        <p>
+          <label for="filtro-categoria">Categoría:</label>
+          <select id="filtro-categoria" name="categoria">
+            <option value="">-- Selecciona una categoría --</option>
+            <option value="pasta">Pasta</option>
+            <option value="chicken">Pollo</option>
+            <option value="dessert">Postres</option>
+          </select>
+        </p>
+        <button type="submit">Buscar plato</button>
+      </form>
+    </section>
+
+    <!-- Sección de Resultados -->
+    <section id="resultados">
+      <h2>Resultados de ejemplo</h2>
+      
+      <!-- Receta 1 en Tarjeta -->
+      <article class="tarjeta receta-card">
+        <img src="https://www.themealdb.com/images/media/meals/ustsqw1468250014.jpg" alt="Plato de Spicy Arrabiata Penne">
+        <div class="receta-contenido">
+          <h3>Spicy Arrabiata Penne</h3>
+          <p><strong>Categoría:</strong> Pasta</p>
+          <p>Una deliciosa pasta italiana con salsa de tomate picante y ajo.</p>
+        </div>
+      </article>
+
+      <!-- Receta 2 en Tarjeta -->
+      <article class="tarjeta receta-card">
+        <img src="https://www.themealdb.com/images/media/meals/1529444830.jpg" alt="Plato de Chicken Basquaise">
+        <div class="receta-contenido">
+          <h3>Chicken Basquaise</h3>
+          <p><strong>Categoría:</strong> Pollo</p>
+          <p>Pollo jugoso preparado al estilo tradicional vasco.</p>
+        </div>
+      </article>
+
+      <!-- Receta 3 en Tarjeta -->
+      <article class="tarjeta receta-card">
+        <img src="https://www.themealdb.com/images/media/meals/ryppsv1511815505.jpg" alt="Plato de Apam gbalik">
+        <div class="receta-contenido">
+          <h3>Apam gbalik</h3>
+          <p><strong>Categoría:</strong> Postres</p>
+          <p>Un postre tradicional dulce y esponjoso.</p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>Desarrollado con fines académicos — Universidad de Caldas. API utilizada: <a href="https://www.themealdb.com/" target="_blank">TheMealDB</a></p>
+  </footer>
+
+</body>
+</html>
