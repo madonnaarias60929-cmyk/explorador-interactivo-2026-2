@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explorador de Recetas</title>
+  <!-- Enlace al archivo CSS compilado de Tailwind -->
+  <link rel="stylesheet" href="css/tailwind.css">
+</head>
+<body class="min-h-dvh bg-slate-100 text-slate-900 dark:bg-slate-900 dark:text-slate-100">
+
+  <!-- Navbar / Cabecera -->
+  <header class="sticky top-0 z-10 bg-white shadow dark:bg-slate-900 dark:shadow-slate-950">
+    <nav class="relative mx-auto flex max-w-6xl items-center justify-between p-4">
+      <a href="#" class="text-xl font-bold text-indigo-600 dark:text-indigo-400">
+        Recetas<span class="text-slate-900 dark:text-white">Craft</span>
+      </a>
+      <button id="btn-menu" type="button"
+              class="rounded-lg p-2 text-2xl hover:bg-slate-100 md:hidden dark:hover:bg-slate-800"
+              aria-label="Abrir menú" aria-controls="menu" aria-expanded="false">☰</button>
+      <ul id="menu"
+          class="absolute top-full right-0 left-0 hidden flex-col gap-1 bg-white p-4 shadow-lg
+                 md:static md:flex md:flex-row md:gap-6 md:bg-transparent md:p-0 md:shadow-none
+                 dark:bg-slate-900">
+        <li><a href="#" class="block rounded-lg px-3 py-2 font-medium text-indigo-600 md:p-0 dark:text-indigo-400">Inicio</a></li>
+        <li><a href="#" class="block rounded-lg px-3 py-2 text-slate-700 hover:bg-slate-100 hover:text-indigo-600 md:p-0 md:hover:bg-transparent dark:text-slate-300 dark:hover:bg-slate-800">Categorías</a></li>
+        <li><a href="#" class="block rounded-lg px-3 py-2 text-slate-700 hover:bg-slate-100 hover:text-indigo-600 md:p-0 md:hover:bg-transparent dark:text-slate-300 dark:hover:bg-slate-800">Guardadas</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contenido Principal -->
+  <main class="mx-auto max-w-6xl p-4">
+    <h1 class="mt-4 text-3xl font-bold md:text-4xl">Explorador de Recetas</h1>
+    <p class="mt-1 text-slate-500 dark:text-slate-400">Encuentra las mejores preparaciones para cada ocasión</p>
+
+    <!-- Formulario de Búsqueda y Filtros -->
+    <form class="my-6 flex flex-col gap-3 md:flex-row" role="search">
+      <label for="busqueda" class="sr-only">Buscar receta</label>
+      <input id="busqueda" type="search" placeholder="Buscar receta, ingrediente..." minlength="2"
+             class="flex-1 rounded-lg border border-slate-300 bg-white px-3 py-2
+                   focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 focus:outline-none
+                   user-invalid:border-rose-500
+                   dark:border-slate-600 dark:bg-slate-800 dark:focus:ring-indigo-900">
+      
+      <label for="filtro-categoria" class="sr-only">Filtrar por categoría</label>
+      <select id="filtro-categoria"
+              class="rounded-lg border border-slate-300 bg-white px-3 py-2
+                   focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 focus:outline-none
+                   dark:border-slate-600 dark:bg-slate-800 dark:focus:ring-indigo-900">
+        <option value="">Todas las categorías</option>
+        <option value="pastas">Pastas</option>
+        <option value="postres">Postres</option>
+        <option value="ensaladas">Ensaladas</option>
+      </select>
+      
+      <button type="submit"
+              class="rounded-lg bg-indigo-600 px-5 py-2 font-semibold text-white transition
+                     hover:bg-indigo-700 active:scale-95">
+        Buscar
+      </button>
+    </form>
+
+    <h2 class="mt-6 mb-3 text-sm font-semibold tracking-wide text-slate-500 uppercase dark:text-slate-400">Resultados</h2>
+    
+    <!-- Grilla de Tarjetas -->
+    <section class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      
+      <!-- Tarjeta 1 -->
+      <article class="flex flex-col overflow-hidden rounded-2xl bg-white shadow group transition hover:-translate-y-1 hover:shadow-xl dark:bg-slate-800">
+        <div class="overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=500&q=60" alt="Fettuccine Alfredo"
+              class="aspect-square w-full object-cover transition group-hover:scale-105">
+        </div>
+        <div class="flex flex-1 flex-col gap-2 p-4">
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white">Fettuccine Alfredo</h3>
+          <span class="w-fit rounded-full px-2.5 py-0.5 text-xs font-semibold bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300">⏱️ 20 min</span>
+          <p class="text-sm text-slate-500 dark:text-slate-400">Pasta clásica italiana con cremosa salsa de mantequilla y queso parmesano.</p>
+          <button type="button" class="btn-detalle mt-auto rounded-lg bg-indigo-600 py-2 font-semibold text-white transition hover:bg-indigo-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  data-nombre="Fettuccine Alfredo" 
+                  data-imagen="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=500&q=60"
+                  data-tiempo="20 min" 
+                  data-categoria="Pastas" 
+                  data-descripcion="Pasta rellena hecha en casa bañada en mantequilla de salvia fresca y un toque de crema.">
+            Ver receta
+          </button>
+        </div>
+      </article>
+
+      <!-- Tarjeta 2 -->
+      <article class="flex flex-col overflow-hidden rounded-2xl bg-white shadow group transition hover:-translate-y-1 hover:shadow-xl dark:bg-slate-800">
+        <div class="overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1612874742237-6526221588e3?auto=format&fit=crop&w=500&q=60" alt="Spaghetti Carbonara"
+              class="aspect-square w-full object-cover transition group-hover:scale-105">
+        </div>
+        <div class="flex flex-1 flex-col gap-2 p-4">
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white">Spaghetti Carbonara</h3>
+          <span class="w-fit rounded-full px-2.5 py-0.5 text-xs font-semibold bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300">⏱️ 25 min</span>
+          <p class="text-sm text-slate-500 dark:text-slate-400">Receta tradicional romana con huevo, guanciale y queso pecorino.</p>
+          <button type="button" class="btn-detalle mt-auto rounded-lg bg-indigo-600 py-2 font-semibold text-white transition hover:bg-indigo-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  data-nombre="Spaghetti Carbonara" 
+                  data-imagen="https://images.unsplash.com/photo-1612874742237-6526221588e3?auto=format&fit=crop&w=500&q=60"
+                  data-tiempo="25 min" 
+                  data-categoria="Pastas" 
+                  data-descripcion="Receta tradicional romana con huevo, guanciale, queso pecorino y pimienta negra recién molida.">
+            Ver receta
+          </button>
+        </div>
+      </article>
+
+      <!-- Tarjeta 3 -->
+      <article class="flex flex-col overflow-hidden rounded-2xl bg-white shadow group transition hover:-translate-y-1 hover:shadow-xl dark:bg-slate-800">
+        <div class="overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1574894709920-11b28e7367e3?auto=format&fit=crop&w=500&q=60" alt="Lasaña a la Bolognesa"
+              class="aspect-square w-full object-cover transition group-hover:scale-105">
+        </div>
+        <div class="flex flex-1 flex-col gap-2 p-4">
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white">Lasaña a la Bolognesa</h3>
+          <span class="w-fit rounded-full px-2.5 py-0.5 text-xs font-semibold bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300">⏱️ 45 min</span>
+          <p class="text-sm text-slate-500 dark:text-slate-400">Capas de pasta artesanal, ragú tradicional y salsa bechamel.</p>
+          <button type="button" class="btn-detalle mt-auto rounded-lg bg-indigo-600 py-2 font-semibold text-white transition hover:bg-indigo-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  data-nombre="Lasaña a la Bolognesa" 
+                  data-imagen="https://images.unsplash.com/photo-1574894709920-11b28e7367e3?auto=format&fit=crop&w=500&q=60"
+                  data-tiempo="45 min" 
+                  data-categoria="Pastas" 
+                  data-descripcion="Capas de pasta artesanal, ragú tradicional de carne y salsa bechamel horneada a la perfección.">
+            Ver receta
+          </button>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-12 border-t border-slate-200 py-6 text-center text-sm text-slate-500 dark:border-slate-700 dark:text-slate-400">
+    Proyecto del curso Web I · Hecho con Tailwind CSS v4
+  </footer>
+
+  <!-- Modal Nativo para Recetas -->
+  <dialog id="modal-detalle" aria-labelledby="modal-nombre"
+          class="m-auto w-full max-w-md overflow-hidden rounded-2xl bg-white p-0 shadow-2xl
+                 backdrop:bg-slate-900/60 backdrop:backdrop-blur-sm
+                 dark:bg-slate-800 dark:text-slate-100">
+    <img id="modal-img" src="" alt="" class="aspect-square w-full object-cover">
+    <div class="space-y-4 p-6">
+      <h2 id="modal-nombre" class="text-2xl font-bold text-slate-900 dark:text-white"></h2>
+      <dl class="grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
+        <dt class="text-slate-500 dark:text-slate-400">Tiempo</dt> <dd id="modal-tiempo" class="font-medium"></dd>
+        <dt class="text-slate-500 dark:text-slate-400">Categoría</dt> <dd id="modal-categoria" class="font-medium"></dd>
+      </dl>
+      <p id="modal-descripcion" class="text-sm text-slate-600 dark:text-slate-300"></p>
+      <form method="dialog">
+        <button class="w-full rounded-lg border border-slate-300 py-2 font-semibold
+                       hover:bg-slate-100 dark:border-slate-600 dark:hover:bg-slate-700">
+          Cerrar
+        </button>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- Script interactivo -->
+  <script>
+    // Menú móvil
+    const btnMenu = document.getElementById('btn-menu');
+    const menu = document.getElementById('menu');
+    btnMenu.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+      btnMenu.setAttribute('aria-expanded', !menu.classList.contains('hidden'));
+    });
+
+    // Modal dinámico para recetas
+    const modal = document.getElementById('modal-detalle');
+    document.querySelectorAll('.btn-detalle').forEach(boton => {
+      boton.addEventListener('click', () => {
+        const datos = boton.dataset;
+        document.getElementById('modal-nombre').textContent = datos.nombre;
+        document.getElementById('modal-img').src = datos.imagen;
+        document.getElementById('modal-img').alt = datos.nombre;
+        document.getElementById('modal-tiempo').textContent = datos.tiempo;
+        document.getElementById('modal-categoria').textContent = datos.categoria;
+        document.getElementById('modal-descripcion').textContent = datos.descripcion;
+        modal.showModal();
+      });
+    });
+
+    // Cerrar al hacer clic en el fondo oscuro
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) modal.close();
+    });
+  </script>
+</body>
+</html>
