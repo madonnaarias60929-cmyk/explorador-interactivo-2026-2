@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio 4 - Réplica de Layout</title>
+    <link rel="stylesheet" href="./css/layout.css">
+</head>
+<body>
+
+    <!-- Header con navegación principal y Flexbox -->
+    <header class="cabecera">
+        <a href="#" class="logo">🚀 MiTienda</a>
+        <input type="search" class="buscador" placeholder="Buscar productos, elementos..." aria-label="Buscar">
+        <nav>
+            <ul class="menu">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Explorar</a></li>
+                <li><a href="#">Cuenta</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sidebar de Filtros -->
+    <aside class="filtros">
+        <h2>Filtros</h2>
+        <fieldset>
+            <legend>Categoría</legend>
+            <label><input type="checkbox" name="cat" value="tec" checked> Tecnología</label>
+            <label><input type="checkbox" name="cat" value="hogar"> Hogar</label>
+            <label><input type="checkbox" name="cat" value="ropa"> Ropa</label>
+        </fieldset>
+        <fieldset>
+            <legend>Precio</legend>
+            <label>Mín <input type="number" name="min" min="0"></label>
+            <label>Máx <input type="number" name="max" min="0"></label>
+        </fieldset>
+    </aside>
+
+    <!-- Resultados / Grilla de la Sesión -->
+    <main class="resultados">
+        <article class="tarjeta">
+            <img src="https://picsum.photos/300/200?random=1" alt="Elemento 1">
+            <h3>Elemento 1</h3>
+            <p>Descripción corta del primer elemento del laboratorio.</p>
+            <span class="precio">$99.900</span>
+            <button type="button">Ver detalle</button>
+        </article>
+
+        <article class="tarjeta">
+            <img src="https://picsum.photos/300/200?random=2" alt="Elemento 2">
+            <h3>Elemento 2</h3>
+            <p>Descripción del segundo elemento con un texto un poco más largo para validar la alineación del botón al fondo.</p>
+            <span class="precio">$149.900</span>
+            <button type="button">Ver detalle</button>
+        </article>
+
+        <article class="tarjeta">
+            <img src="https://picsum.photos/300/200?random=3" alt="Elemento 3">
+            <h3>Elemento 3</h3>
+            <p>Descripción corta del tercer elemento.</p>
+            <span class="precio">$59.900</span>
+            <button type="button">Ver detalle</button>
+        </article>
+
+        <article class="tarjeta">
+            <img src="https://picsum.photos/300/200?random=4" alt="Elemento 4">
+            <h3>Elemento 4</h3>
+            <p>Texto estándar de prueba para la cuarta tarjeta de la grilla automática.</p>
+            <span class="precio">$210.000</span>
+            <button type="button">Ver detalle</button>
+        </article>
+    </main>
+
+    <!-- Pie de página (Grid de 3 columnas) -->
+    <footer class="pie">
+        <div>
+            <h4>Laboratorio Web 1</h4>
+            <p>Semana 4 · Flexbox y Grid</p>
+        </div>
+        <div>
+            <h4>Navegación</h4>
+            <a href="#">Términos</a>
+            <a href="#">Privacidad</a>
+        </div>
+        <div>
+            <h4>Soporte</h4>
+            <a href="#">Ayuda</a>
+            <a href="#">Contacto</a>
+        </div>
+    </footer>
+
+</body>
+</html>

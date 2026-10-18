@@ -1,0 +1,17 @@
+.contenedor {
+  display: flex;
+  flex-direction: row;        /* row | row-reverse | column | column-reverse */
+  justify-content: space-between; /* eje principal:
+                                     flex-start | center | flex-end |
+                                     space-between | space-around | space-evenly */
+  align-items: center;        /* eje cruzado:
+                                 stretch (defecto) | flex-start | center | flex-end */
+  gap: 1rem;                  /* espacio ENTRE ítems (adiós a los margins hackeados) */
+  flex-wrap: wrap;            /* permite que los ítems salten de línea si no caben */
+}
+
+/* Propiedades de los ÍTEMS (los hijos) */
+.item-crece    { flex-grow: 1; }   /* absorbe el espacio sobrante */
+.item-fijo     { flex-shrink: 0; } /* se niega a encogerse */
+.item-base     { flex-basis: 200px; } /* tamaño inicial antes de crecer/encoger */
+.item-atajo    { flex: 1; }        /* atajo común: crece y encoge desde 0 */

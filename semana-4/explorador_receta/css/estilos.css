@@ -1,0 +1,175 @@
+/* --- Reseteo Base --- */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --primario: #A35868;
+    --primario-hover: #8C4755;
+    --acento: #F7D2B6;
+    --texto: #2A2024;
+    --fondo-suave: #FAF6F0;
+    --blanco: #ffffff;
+    --borde: #E8D5CE;
+}
+
+body.pagina-recetas {
+    margin: 0;
+    font-family: system-ui, -apple-system, sans-serif;
+    color: var(--texto);
+    background-color: var(--fondo-suave);
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "cabecera cabecera"
+        "lateral  contenido"
+        "pie      pie";
+    gap: 1rem;
+}
+
+/* Header Flexbox */
+.cabecera {
+    grid-area: cabecera;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem 2rem;
+    background-color: var(--blanco);
+    border-bottom: 1px solid var(--borde);
+}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--primario);
+    text-decoration: none;
+}
+
+.buscador {
+    flex: 1;
+    max-width: 480px;
+    padding: 0.6rem 1rem;
+    border: 1px solid var(--borde);
+    border-radius: 20px;
+    font-size: 0.95rem;
+}
+
+.menu {
+    display: flex;
+    gap: 1.2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu a {
+    text-decoration: none;
+    color: var(--texto);
+    font-weight: 600;
+}
+
+/* Sidebar Filtros */
+.filtros {
+    grid-area: lateral;
+    background-color: var(--blanco);
+    padding: 1.5rem;
+    border-right: 1px solid var(--borde);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.filtros fieldset {
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Grilla de Resultados */
+.resultados {
+    grid-area: contenido;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.5rem;
+    padding: 1.5rem;
+    min-width: 0;
+}
+
+/* Tarjeta de Receta (Flexbox en Columna) */
+.tarjeta-receta {
+    background-color: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    min-width: 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+}
+
+.tarjeta-receta img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.tarjeta-receta h3 {
+    margin: 0;
+    color: var(--primario);
+}
+
+.tarjeta-receta p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #555;
+    overflow-wrap: break-word;
+}
+
+.tiempo {
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #777;
+}
+
+/* Alineación del botón al fondo */
+.tarjeta-receta button {
+    margin-top: auto;
+    background-color: var(--primario);
+    color: var(--blanco);
+    border: none;
+    padding: 0.65rem;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.tarjeta-receta button:hover {
+    background-color: var(--primario-hover);
+}
+
+/* Footer Grid */
+.pie {
+    grid-area: pie;
+    background-color: var(--primario);
+    color: var(--blanco);
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.pie a {
+    color: var(--acento);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.3rem;
+}
