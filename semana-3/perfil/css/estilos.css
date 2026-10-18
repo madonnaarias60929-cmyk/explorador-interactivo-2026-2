@@ -3,21 +3,22 @@
   box-sizing: border-box;
 }
 
-/* --- 2. Variables CSS (:root) --- */
+/* --- 2. Variables CSS (:root) — Paleta Inspirada en tu Diseño --- */
 :root {
-  --primario: #4f46e5;        /* Índigo elegante */
-  --primario-hover: #4338ca;  /* Tono para hover */
-  --texto: #1e293b;           /* Gris oscuro para lectura */
-  --fondo-suave: #f8fafc;     /* Fondo suave */
+  --primario: #A35868;          /* Rosa vino tinto / Palo de rosa */
+  --primario-hover: #8C4755;    /* Tono más oscuro para hovers */
+  --acento: #F7D2B6;            /* Crema / Beige cálido */
+  --texto: #2A2024;             /* Café oscuro para alta legibilidad */
+  --fondo-suave: #FAF6F0;       /* Blanco roto / crema claro */
   --blanco: #ffffff;
-  --borde: #e2e8f0;           /* Borde sutil */
-  --sombra: rgba(0, 0, 0, 0.08);
+  --borde: #E8D5CE;             /* Borde sutil acoplado a la paleta */
+  --sombra: rgba(163, 88, 104, 0.12);
 }
 
 /* --- 3. Estilos Globales --- */
 body {
   font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 1rem;            /* 16px base accesible */
+  font-size: 1rem;
   line-height: 1.6;
   color: var(--texto);
   background-color: var(--fondo-suave);
@@ -51,57 +52,61 @@ main {
 
 /* --- 6. Tarjeta de Perfil / Header --- */
 .tarjeta-perfil {
-  background-color: var(--blanco);
-  border: 1px solid var(--borde);
+  background-color: var(--primario);
+  color: var(--blanco);
   border-radius: 12px;
-  padding: 2rem 1.5rem;
+  padding: 2.5rem 1.5rem;
   margin-bottom: 1.5rem;
   text-align: center;
-  box-shadow: 0 4px 12px var(--sombra);
+  box-shadow: 0 6px 16px var(--sombra);
 }
 
 .tarjeta-perfil img {
-  width: 120px;
-  height: 120px;
+  width: 130px;
+  height: 130px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid var(--primario);
+  border: 3px dashed var(--acento);
+  padding: 3px;
   margin-bottom: 1rem;
 }
 
 .tarjeta-perfil h1 {
   margin: 0 0 0.25rem 0;
-  font-size: 1.75rem;
-  color: var(--texto);
+  font-size: 1.85rem;
+  color: var(--blanco);
 }
 
 .tarjeta-perfil p {
   margin: 0 0 1rem 0;
-  color: #64748b;
-  font-weight: 500;
+  color: var(--acento);
+  font-weight: 600;
 }
 
 /* Navegación interna del Perfil */
 .tarjeta-perfil nav ul {
   list-style: none;
   padding: 0;
-  margin: 1rem 0 0 0;
+  margin: 1.5rem 0 0 0;
   display: flex;
   justify-content: center;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .tarjeta-perfil nav a {
-  color: var(--primario);
+  color: var(--blanco);
   text-decoration: none;
   font-weight: 600;
-  padding: 0.25rem 0.75rem;
-  border-radius: 6px;
-  transition: background-color 0.2s;
+  padding: 0.4rem 1rem;
+  border: 1px solid var(--acento);
+  border-radius: 20px;
+  transition: all 0.2s ease;
 }
 
 .tarjeta-perfil nav a:hover {
-  background-color: #e0e7ff;
+  background-color: var(--acento);
+  color: var(--primario);
 }
 
 /* --- 7. Tablas con Efecto Cebra --- */
@@ -123,7 +128,7 @@ th {
 }
 
 tr:nth-child(even) {
-  background-color: #f1f5f9; /* Efecto cebra en filas pares */
+  background-color: #F8ECE9; /* Efecto cebra suave con tono palo rosa */
 }
 
 /* --- 8. Formulario de Contacto --- */
@@ -135,6 +140,7 @@ label {
   display: block;
   margin-bottom: 0.3rem;
   font-weight: 600;
+  color: var(--texto);
 }
 
 input[type="text"],
@@ -146,13 +152,14 @@ textarea {
   border-radius: 6px;
   font-family: inherit;
   font-size: 1rem;
+  background-color: #FFFDFB;
 }
 
 input:focus,
 textarea:focus {
   outline: none;
   border-color: var(--primario);
-  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+  box-shadow: 0 0 0 3px rgba(163, 88, 104, 0.2);
 }
 
 button[type="submit"] {
@@ -160,12 +167,12 @@ button[type="submit"] {
   color: var(--blanco);
   border: none;
   padding: 0.75rem 1.5rem;
-  border-radius: 6px;
+  border-radius: 25px;
   cursor: pointer;
   font-weight: bold;
   font-size: 1rem;
   width: 100%;
-  transition: background-color 0.2s;
+  transition: background-color 0.2s ease;
 }
 
 button[type="submit"]:hover {
