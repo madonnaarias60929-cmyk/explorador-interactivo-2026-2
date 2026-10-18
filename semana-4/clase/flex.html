@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laboratorio de Flexbox</title>
+  <style>
+    body { font-family: system-ui, sans-serif; padding: 2rem; }
+
+    .contenedor {
+      display: flex;                 /* sin esta línea no pasa NADA */
+      border: 3px dashed #64748b;    /* para VER dónde está el contenedor */
+      min-height: 250px;             /* sin altura sobrante no hay nada que alinear */
+
+      /* ↓↓↓ juega SOLO con estas cuatro líneas ↓↓↓ */
+      flex-direction: row;           /* row | row-reverse | column | column-reverse */
+      justify-content: flex-start;   /* flex-start | center | flex-end |
+                                        space-between | space-around | space-evenly */
+      align-items: stretch;          /* stretch | flex-start | center | flex-end | baseline */
+      gap: 0;                        /* prueba 8px, 16px, 2rem… */
+    }
+
+    .caja { padding: 1rem; color: #fff; font-size: 1.3rem; font-weight: 700; }
+    .a { background: #ef4444; }
+    .b { background: #3b82f6; }
+    .c { background: #22c55e; }
+  </style>
+</head>
+<body>
+  <h1>Laboratorio de Flexbox</h1>
+
+  <div class="contenedor">
+    <div class="caja a">A</div>
+    <div class="caja b">B — tengo más contenido que las demás</div>
+    <div class="caja c">C</div>
+  </div>
+</body>
+</html>

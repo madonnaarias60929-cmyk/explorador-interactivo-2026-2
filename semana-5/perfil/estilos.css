@@ -1,0 +1,51 @@
+body {
+    background-color: #f0f2f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.tarjeta-perfil-hover {
+    background-color: #ffffff;
+    width: 340px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.tarjeta-perfil-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+.avatar-iniciales {
+    background-color: #2563eb;
+    color: white;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 auto 15px auto;
+}
+.tarjeta-perfil-hover h2 {
+    color: #1e293b;
+    margin: 0 0 5px 0;
+    font-size: 1.25rem;
+}
+.carrera {
+    color: #3b82f6;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin: 0 0 5px 0;
+}
+.universidad {
+    color: #64748b;
+    font-size: 0.85rem;
+    margin: 0;
+}

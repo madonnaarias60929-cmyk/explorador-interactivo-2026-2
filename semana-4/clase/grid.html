@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laboratorio de Grid - Semana 4</title>
+  <style>
+    body { 
+      font-family: system-ui, sans-serif; 
+      padding: 2rem; 
+      background-color: #fcf6f7;
+      color: #5c4d58;
+    }
+
+    h1 {
+      color: #9d6b76;
+      margin-bottom: 1rem;
+    }
+
+    .rejilla {
+      display: grid;
+      /* 3 columnas: fija de 200px, flexible (1 fracción), flexible doble (2 fracciones) */
+      grid-template-columns: 200px 1fr 2fr;
+      grid-template-rows: auto auto;   /* 2 filas de altura según contenido */
+      gap: 1rem;
+      border: 3px dashed #b5838d;
+      padding: 1rem;
+      border-radius: 12px;
+      background-color: #ffffff;
+    }
+
+    .celda { 
+      background: #b5838d; 
+      color: #fff; 
+      padding: 1.5rem; 
+      border-radius: 8px;
+      font-weight: 700; 
+      text-align: center; 
+    }
+
+    /* Prueba a descomentar la siguiente línea y observa cómo la celda 1 se come cuatro casillas: */
+    /* .celda:first-child { grid-column: span 2; grid-row: span 2; } */
+  </style>
+</head>
+<body>
+  <h1>Laboratorio de Grid</h1>
+
+  <div class="rejilla">
+    <div class="celda">1</div>
+    <div class="celda">2</div>
+    <div class="celda">3</div>
+    <div class="celda">4</div>
+    <div class="celda">5</div>
+    <div class="celda">6</div>
+  </div>
+</body>
+</html>
