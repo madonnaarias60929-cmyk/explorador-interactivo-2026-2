@@ -63,72 +63,143 @@
 
     <h2 class="mt-6 mb-3 text-sm font-semibold tracking-wide text-slate-500 uppercase dark:text-slate-400">Resultados</h2>
     
-    <!-- Grilla de Tarjetas -->
-    <section class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-      
-      <!-- Tarjeta 1 -->
-      <article class="flex flex-col overflow-hidden rounded-2xl bg-white shadow group transition hover:-translate-y-1 hover:shadow-xl dark:bg-slate-800">
-        <div class="overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=500&q=60" alt="Fettuccine Alfredo"
-              class="aspect-square w-full object-cover transition group-hover:scale-105">
-        </div>
-        <div class="flex flex-1 flex-col gap-2 p-4">
-          <h3 class="text-lg font-bold text-slate-900 dark:text-white">Fettuccine Alfredo</h3>
-          <span class="w-fit rounded-full px-2.5 py-0.5 text-xs font-semibold bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300">⏱️ 20 min</span>
-          <p class="text-sm text-slate-500 dark:text-slate-400">Pasta clásica italiana con cremosa salsa de mantequilla y queso parmesano.</p>
-          <button type="button" class="btn-detalle mt-auto rounded-lg bg-indigo-600 py-2 font-semibold text-white transition hover:bg-indigo-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                  data-nombre="Fettuccine Alfredo" 
-                  data-imagen="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=500&q=60"
-                  data-tiempo="20 min" 
-                  data-categoria="Pastas" 
-                  data-descripcion="Pasta rellena hecha en casa bañada en mantequilla de salvia fresca y un toque de crema.">
-            Ver receta
-          </button>
-        </div>
-      </article>
+    <!-- Grilla de Tarjetas (8 Recetas) -->
+<section class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+  
+  <!-- Receta 1 -->
+  <article class="flex flex-col overflow-hidden rounded-2xl bg-white shadow group transition hover:-translate-y-1 hover:shadow-xl dark:bg-slate-800">
+    <div class="overflow-hidden">
+      <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=500&q=60" alt="Fettuccine Alfredo" class="aspect-square w-full object-cover transition group-hover:scale-105">
+    </div>
+    <div class="flex flex-1 flex-col gap-2 p-4">
+      <h3 class="text-lg font-bold text-slate-900 dark:text-white">Fettuccine Alfredo</h3>
+      <span class="w-fit rounded-full px-2.5 py-0.5 text-xs font-semibold bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300">⏱️ 20 min</span>
+      <p class="text-sm text-slate-500 dark:text-slate-400">Pasta clásica italiana con cremosa salsa de mantequilla y queso parmesano.</p>
+      <button type="button" class="btn-detalle mt-auto rounded-lg bg-rose-500 py-2 font-semibold text-white transition hover:bg-rose-600 focus-visible:outline-2"
+              data-nombre="Fettuccine Alfredo" data-imagen="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=500&q=60"
+              data-tiempo="20 min" data-categoria="Pastas" data-descripcion="Pasta rica y cremosa bañada en mantequilla con ajo y parmesano madurado.">
+        Ver receta
+      </button>
+    </div>
+  </article>
 
-      <!-- Tarjeta 2 -->
-      <article class="flex flex-col overflow-hidden rounded-2xl bg-white shadow group transition hover:-translate-y-1 hover:shadow-xl dark:bg-slate-800">
-        <div class="overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1612874742237-6526221588e3?auto=format&fit=crop&w=500&q=60" alt="Spaghetti Carbonara"
-              class="aspect-square w-full object-cover transition group-hover:scale-105">
-        </div>
-        <div class="flex flex-1 flex-col gap-2 p-4">
-          <h3 class="text-lg font-bold text-slate-900 dark:text-white">Spaghetti Carbonara</h3>
-          <span class="w-fit rounded-full px-2.5 py-0.5 text-xs font-semibold bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300">⏱️ 25 min</span>
-          <p class="text-sm text-slate-500 dark:text-slate-400">Receta tradicional romana con huevo, guanciale y queso pecorino.</p>
-          <button type="button" class="btn-detalle mt-auto rounded-lg bg-indigo-600 py-2 font-semibold text-white transition hover:bg-indigo-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                  data-nombre="Spaghetti Carbonara" 
-                  data-imagen="https://images.unsplash.com/photo-1612874742237-6526221588e3?auto=format&fit=crop&w=500&q=60"
-                  data-tiempo="25 min" 
-                  data-categoria="Pastas" 
-                  data-descripcion="Receta tradicional romana con huevo, guanciale, queso pecorino y pimienta negra recién molida.">
-            Ver receta
-          </button>
-        </div>
-      </article>
+  <!-- Receta 2 -->
+  <article class="flex flex-col overflow-hidden rounded-2xl bg-white shadow group transition hover:-translate-y-1 hover:shadow-xl dark:bg-slate-800">
+    <div class="overflow-hidden">
+      <img src="https://images.unsplash.com/photo-1612874742237-6526221588e3?auto=format&fit=crop&w=500&q=60" alt="Spaghetti Carbonara" class="aspect-square w-full object-cover transition group-hover:scale-105">
+    </div>
+    <div class="flex flex-1 flex-col gap-2 p-4">
+      <h3 class="text-lg font-bold text-slate-900 dark:text-white">Spaghetti Carbonara</h3>
+      <span class="w-fit rounded-full px-2.5 py-0.5 text-xs font-semibold bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300">⏱️ 25 min</span>
+      <p class="text-sm text-slate-500 dark:text-slate-400">Receta tradicional romana con huevo, guanciale y queso pecorino.</p>
+      <button type="button" class="btn-detalle mt-auto rounded-lg bg-rose-500 py-2 font-semibold text-white transition hover:bg-rose-600 focus-visible:outline-2"
+              data-nombre="Spaghetti Carbonara" data-imagen="https://images.unsplash.com/photo-1612874742237-6526221588e3?auto=format&fit=crop&w=500&q=60"
+              data-tiempo="25 min" data-categoria="Pastas" data-descripcion="Preparación tradicional con yemas de huevo frescas, tocineta crujiente y pimienta recién molida.">
+        Ver receta
+      </button>
+    </div>
+  </article>
 
-      <!-- Tarjeta 3 -->
-      <article class="flex flex-col overflow-hidden rounded-2xl bg-white shadow group transition hover:-translate-y-1 hover:shadow-xl dark:bg-slate-800">
-        <div class="overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1574894709920-11b28e7367e3?auto=format&fit=crop&w=500&q=60" alt="Lasaña a la Bolognesa"
-              class="aspect-square w-full object-cover transition group-hover:scale-105">
-        </div>
-        <div class="flex flex-1 flex-col gap-2 p-4">
-          <h3 class="text-lg font-bold text-slate-900 dark:text-white">Lasaña a la Bolognesa</h3>
-          <span class="w-fit rounded-full px-2.5 py-0.5 text-xs font-semibold bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300">⏱️ 45 min</span>
-          <p class="text-sm text-slate-500 dark:text-slate-400">Capas de pasta artesanal, ragú tradicional y salsa bechamel.</p>
-          <button type="button" class="btn-detalle mt-auto rounded-lg bg-indigo-600 py-2 font-semibold text-white transition hover:bg-indigo-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                  data-nombre="Lasaña a la Bolognesa" 
-                  data-imagen="https://images.unsplash.com/photo-1574894709920-11b28e7367e3?auto=format&fit=crop&w=500&q=60"
-                  data-tiempo="45 min" 
-                  data-categoria="Pastas" 
-                  data-descripcion="Capas de pasta artesanal, ragú tradicional de carne y salsa bechamel horneada a la perfección.">
-            Ver receta
-          </button>
-        </div>
-      </article>
+  <!-- Receta 3 -->
+  <article class="flex flex-col overflow-hidden rounded-2xl bg-white shadow group transition hover:-translate-y-1 hover:shadow-xl dark:bg-slate-800">
+    <div class="overflow-hidden">
+      <img src="https://images.unsplash.com/photo-1574894709920-11b28e7367e3?auto=format&fit=crop&w=500&q=60" alt="Lasaña a la Bolognesa" class="aspect-square w-full object-cover transition group-hover:scale-105">
+    </div>
+    <div class="flex flex-1 flex-col gap-2 p-4">
+      <h3 class="text-lg font-bold text-slate-900 dark:text-white">Lasaña Bolognesa</h3>
+      <span class="w-fit rounded-full px-2.5 py-0.5 text-xs font-semibold bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300">⏱️ 45 min</span>
+      <p class="text-sm text-slate-500 dark:text-slate-400">Capas de pasta artesanal, ragú tradicional y salsa bechamel.</p>
+      <button type="button" class="btn-detalle mt-auto rounded-lg bg-rose-500 py-2 font-semibold text-white transition hover:bg-rose-600 focus-visible:outline-2"
+              data-nombre="Lasaña Bolognesa" data-imagen="https://images.unsplash.com/photo-1574894709920-11b28e7367e3?auto=format&fit=crop&w=500&q=60"
+              data-tiempo="45 min" data-categoria="Pastas" data-descripcion="Clásica lasaña horneada al gratin con queso mozzarella y ragú de carne cocinado a fuego lento.">
+        Ver receta
+      </button>
+    </div>
+  </article>
 
+  <!-- Receta 4 -->
+  <article class="flex flex-col overflow-hidden rounded-2xl bg-white shadow group transition hover:-translate-y-1 hover:shadow-xl dark:bg-slate-800">
+    <div class="overflow-hidden">
+      <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=500&q=60" alt="Penne al Pesto" class="aspect-square w-full object-cover transition group-hover:scale-105">
+    </div>
+    <div class="flex flex-1 flex-col gap-2 p-4">
+      <h3 class="text-lg font-bold text-slate-900 dark:text-white">Penne al Pesto</h3>
+      <span class="w-fit rounded-full px-2.5 py-0.5 text-xs font-semibold bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300">⏱️ 15 min</span>
+      <p class="text-sm text-slate-500 dark:text-slate-400">Salsa verde fresca con albahaca, piñones, ajo y aceite de oliva.</p>
+      <button type="button" class="btn-detalle mt-auto rounded-lg bg-rose-500 py-2 font-semibold text-white transition hover:bg-rose-600 focus-visible:outline-2"
+              data-nombre="Penne al Pesto" data-imagen="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=500&q=60"
+              data-tiempo="15 min" data-categoria="Pastas" data-descripcion="Una opción fresca y rápida con pesto genovés recién preparado y tomates cherry orgánicos.">
+        Ver receta
+      </button>
+    </div>
+  </article>
+
+  <!-- Receta 5 -->
+  <article class="flex flex-col overflow-hidden rounded-2xl bg-white shadow group transition hover:-translate-y-1 hover:shadow-xl dark:bg-slate-800">
+    <div class="overflow-hidden">
+      <img src="https://images.unsplash.com/photo-1546549032-9571cd6b27df?auto=format&fit=crop&w=500&q=60" alt="Raviolis de Espinaca" class="aspect-square w-full object-cover transition group-hover:scale-105">
+    </div>
+    <div class="flex flex-1 flex-col gap-2 p-4">
+      <h3 class="text-lg font-bold text-slate-900 dark:text-white">Raviolis de Espinaca</h3>
+      <span class="w-fit rounded-full px-2.5 py-0.5 text-xs font-semibold bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300">⏱️ 30 min</span>
+      <p class="text-sm text-slate-500 dark:text-slate-400">Pasta rellena con ricotta fresca y espinacas tiernas en mantequilla.</p>
+      <button type="button" class="btn-detalle mt-auto rounded-lg bg-rose-500 py-2 font-semibold text-white transition hover:bg-rose-600 focus-visible:outline-2"
+              data-nombre="Raviolis de Espinaca" data-imagen="https://images.unsplash.com/photo-1546549032-9571cd6b27df?auto=format&fit=crop&w=500&q=60"
+              data-tiempo="30 min" data-categoria="Pastas Rellenas" data-descripcion="Pasta artesanal rellena de queso ricotta cremoso y espinacas con toque de salvia.">
+        Ver receta
+      </button>
+    </div>
+  </article>
+
+  <!-- Receta 6 -->
+  <article class="flex flex-col overflow-hidden rounded-2xl bg-white shadow group transition hover:-translate-y-1 hover:shadow-xl dark:bg-slate-800">
+    <div class="overflow-hidden">
+<img src="https://images.pexels.com/photos/1487511/pexels-photo-1487511.jpeg?auto=compress&cs=tinysrgb&w=500&h=500&dpr=1" alt="Rigatoni Arrabbiata" class="aspect-square w-full object-cover transition group-hover:scale-105">    </div>
+    <div class="flex flex-1 flex-col gap-2 p-4">
+      <h3 class="text-lg font-bold text-slate-900 dark:text-white">Rigatoni Arrabbiata</h3>
+      <span class="w-fit rounded-full px-2.5 py-0.5 text-xs font-semibold bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300">⏱️ 20 min</span>
+      <p class="text-sm text-slate-500 dark:text-slate-400">Salsa de tomate picante con ajo, guindilla y albahaca fresca.</p>
+      <button type="button" class="btn-detalle mt-auto rounded-lg bg-rose-500 py-2 font-semibold text-white transition hover:bg-rose-600 focus-visible:outline-2"
+              data-nombre="Rigatoni Arrabbiata" data-imagen="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=500&q=60"
+              data-tiempo="20 min" data-categoria="Pastas" data-descripcion="Plato italiano de sabor intenso con salsa picante a base de tomates san marzano y ají verde.">
+        Ver receta
+      </button>
+    </div>
+  </article>
+
+  <!-- Receta 7 -->
+  <article class="flex flex-col overflow-hidden rounded-2xl bg-white shadow group transition hover:-translate-y-1 hover:shadow-xl dark:bg-slate-800">
+    <div class="overflow-hidden">
+      <img src="https://images.unsplash.com/photo-1516100882582-96c3a05fe590?auto=format&fit=crop&w=500&q=60" alt="Gnocchi al Pomodoro" class="aspect-square w-full object-cover transition group-hover:scale-105">
+    </div>
+    <div class="flex flex-1 flex-col gap-2 p-4">
+      <h3 class="text-lg font-bold text-slate-900 dark:text-white">Gnocchi al Pomodoro</h3>
+      <span class="w-fit rounded-full px-2.5 py-0.5 text-xs font-semibold bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300">⏱️ 25 min</span>
+      <p class="text-sm text-slate-500 dark:text-slate-400">Ñoquis de papa suaves con salsa pomodoro natural y mozzarella fresca.</p>
+      <button type="button" class="btn-detalle mt-auto rounded-lg bg-rose-500 py-2 font-semibold text-white transition hover:bg-rose-600 focus-visible:outline-2"
+              data-nombre="Gnocchi al Pomodoro" data-imagen="https://images.unsplash.com/photo-1516100882582-96c3a05fe590?auto=format&fit=crop&w=500&q=60"
+              data-tiempo="25 min" data-categoria="Pastas" data-descripcion="Suaves bocados de papa hechos en casa con salsa clásica de tomate y albahaca.">
+        Ver receta
+      </button>
+    </div>
+  </article>
+
+  <!-- Receta 8 -->
+  <article class="flex flex-col overflow-hidden rounded-2xl bg-white shadow group transition hover:-translate-y-1 hover:shadow-xl dark:bg-slate-800">
+    <div class="overflow-hidden">
+      <img src="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=500&q=60" alt="Tagliatelle de Mariscos" class="aspect-square w-full object-cover transition group-hover:scale-105">
+    </div>
+    <div class="flex flex-1 flex-col gap-2 p-4">
+      <h3 class="text-lg font-bold text-slate-900 dark:text-white">Tagliatelle de Mariscos</h3>
+      <span class="w-fit rounded-full px-2.5 py-0.5 text-xs font-semibold bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300">⏱️ 35 min</span>
+      <p class="text-sm text-slate-500 dark:text-slate-400">Pasta larga acompañada de camarones, calamares y vino blanco.</p>
+      <button type="button" class="btn-detalle mt-auto rounded-lg bg-rose-500 py-2 font-semibold text-white transition hover:bg-rose-600 focus-visible:outline-2"
+              data-nombre="Tagliatelle de Mariscos" data-imagen="https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=500&q=60"
+              data-tiempo="35 min" data-categoria="Pastas con Mariscos" data-descripcion="Exquisita combinación marina salteada con vino blanco, ajo, perejil y tomates maduros.">
+        Ver receta
+      </button>
+    </div>
+  </article>
     </section>
   </main>
 
