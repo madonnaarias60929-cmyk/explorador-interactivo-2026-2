@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multiverso Explorer</title>
+<link rel="stylesheet" href="../css/tailwind.css">
+</head>
+<body class="min-h-dvh bg-slate-100 text-slate-900 dark:bg-slate-900 dark:text-slate-100">
+  <!--
+    PASO 09 · Dark mode (resultado final)
+    Qué cambia: Las 5 parejas dark: en body, header, menú, formulario, tarjetas, footer y modal.
+    Compruébalo: DevTools → Rendering → Emulate prefers-color-scheme: dark. Ningún elemento
+    queda blanco ni con texto ilegible.
+  -->
+  <header class="sticky top-0 z-10 bg-white shadow dark:bg-slate-900 dark:shadow-slate-950">
+    <nav class="relative mx-auto flex max-w-6xl items-center justify-between p-4">
+      <a href="#" class="text-xl font-bold text-indigo-600 dark:text-indigo-400">
+        Multiverso<span class="text-slate-900 dark:text-white">Explorer</span>
+      </a>
+      <button id="btn-menu" type="button"
+              class="rounded-lg p-2 text-2xl hover:bg-slate-100 md:hidden dark:hover:bg-slate-800"
+              aria-label="Abrir menú" aria-controls="menu" aria-expanded="false">☰</button>
+      <ul id="menu"
+          class="absolute top-full right-0 left-0 hidden flex-col gap-1 bg-white p-4 shadow-lg
+                 md:static md:flex md:flex-row md:gap-6 md:bg-transparent md:p-0 md:shadow-none
+                 dark:bg-slate-900">
+        <li><a href="#" class="block rounded-lg px-3 py-2 font-medium text-indigo-600 md:p-0 dark:text-indigo-400">Personajes</a></li>
+        <li><a href="#" class="block rounded-lg px-3 py-2 text-slate-700 hover:bg-slate-100 hover:text-indigo-600 md:p-0 md:hover:bg-transparent dark:text-slate-300 dark:hover:bg-slate-800">Episodios</a></li>
+        <li><a href="#" class="block rounded-lg px-3 py-2 text-slate-700 hover:bg-slate-100 hover:text-indigo-600 md:p-0 md:hover:bg-transparent dark:text-slate-300 dark:hover:bg-slate-800">Favoritos</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="mx-auto max-w-6xl p-4">
+    <h1 class="mt-4 text-3xl font-bold md:text-4xl">Personajes de Rick and Morty</h1>
+<p id="contador" class="mt-1 text-slate-500 dark:text-slate-400">8 de 826 personajes · datos escritos a mano hasta la semana 8</p>
+<form id="form-busqueda" class="my-6 flex flex-col gap-3 md:flex-row" role="search">
+        <label for="busqueda" class="sr-only">Buscar personaje</label>
+      <input id="busqueda" type="search" placeholder="Buscar por nombre…" minlength="2"
+             class="flex-1 rounded-lg border border-slate-300 bg-white px-3 py-2
+                   focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 focus:outline-none
+                   user-invalid:border-rose-500
+                   dark:border-slate-600 dark:bg-slate-800 dark:focus:ring-indigo-900">
+      <label for="filtro-estado" class="sr-only">Filtrar por estado</label>
+      <select id="filtro-estado"
+              class="rounded-lg border border-slate-300 bg-white px-3 py-2
+                   focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 focus:outline-none
+                   dark:border-slate-600 dark:bg-slate-800 dark:focus:ring-indigo-900">
+        <option value="">Todos los estados</option>
+        <option value="alive">Vivos</option>
+        <option value="dead">Muertos</option>
+        <option value="unknown">Desconocido</option>
+      </select>
+      <button type="submit"
+              class="rounded-lg bg-indigo-600 px-5 py-2 font-semibold text-white transition
+                     hover:bg-indigo-700 active:scale-95">
+        Buscar
+      </button>
+    </form>
+    <h2 class="mt-6 mb-3 text-sm font-semibold tracking-wide text-slate-500 uppercase dark:text-slate-400">Resultados</h2>
+    <section id="grilla" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <!-- Aquí van las tarjetas de personaje -->
+      
+    </section>
+  </main>
+  <footer class="mt-12 border-t border-slate-200 py-6 text-center text-sm text-slate-500 dark:border-slate-700 dark:text-slate-400">
+    Datos: <a href="https://rickandmortyapi.com" class="underline hover:text-indigo-600">The Rick and Morty API</a> · Hecho con Tailwind CSS v4
+  </footer>
+  <dialog id="modal-detalle" aria-labelledby="modal-nombre"
+          class="m-auto w-full max-w-md overflow-hidden rounded-2xl bg-white p-0 shadow-2xl
+                 backdrop:bg-slate-900/60 backdrop:backdrop-blur-sm
+                 dark:bg-slate-800 dark:text-slate-100">
+    <img id="modal-img" src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" alt="Rick Sanchez" class="aspect-square w-full object-cover">
+    <div class="space-y-4 p-6">
+      <h2 id="modal-nombre" class="text-2xl font-bold text-slate-900 dark:text-white">Rick Sanchez</h2>
+      <dl class="grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
+        <dt class="text-slate-500 dark:text-slate-400">Estado</dt> <dd id="modal-estado" class="font-medium">Vivo</dd>
+        <dt class="text-slate-500 dark:text-slate-400">Especie</dt> <dd id="modal-especie" class="font-medium">Human</dd>
+        <dt class="text-slate-500 dark:text-slate-400">Origen</dt> <dd id="modal-origen" class="font-medium">Earth (C-137)</dd>
+        <dt class="text-slate-500 dark:text-slate-400">Ubicación</dt> <dd id="modal-ubicacion" class="font-medium">Citadel of Ricks</dd>
+      </dl>
+      <form method="dialog">
+        <button class="w-full rounded-lg border border-slate-300 py-2 font-semibold
+                       hover:bg-slate-100 dark:border-slate-600 dark:hover:bg-slate-700">
+          Cerrar
+        </button>
+      </form>
+    </div>
+  </dialog>
+    <script>
+    // ============ 1 · DATOS ============
+    // Los 8 personajes de la semana 6, ahora como un array de objetos con los MISMOS
+    // nombres de propiedad que usa la API: compáralo con
+    // https://rickandmortyapi.com/api/character/1,2,3,4,5,6,7,8
+    // (la API trae además episode, url y created: no los necesitamos todavía).
+    const personajes = [
+      {
+        id: 1, name: 'Rick Sanchez', status: 'Alive', species: 'Human', type: '', gender: 'Male',
+        origin: { name: 'Earth (C-137)' }, location: { name: 'Citadel of Ricks' },
+        image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
+      },
+      {
+        id: 2, name: 'Morty Smith', status: 'Alive', species: 'Human', type: '', gender: 'Male',
+        origin: { name: 'unknown' }, location: { name: 'Citadel of Ricks' },
+        image: 'https://rickandmortyapi.com/api/character/avatar/2.jpeg',
+      },
+      {
+        id: 3, name: 'Summer Smith', status: 'Alive', species: 'Human', type: '', gender: 'Female',
+        origin: { name: 'Earth (Replacement Dimension)' }, location: { name: 'Earth (Replacement Dimension)' },
+        image: 'https://rickandmortyapi.com/api/character/avatar/3.jpeg',
+      },
+      {
+        id: 4, name: 'Beth Smith', status: 'Alive', species: 'Human', type: '', gender: 'Female',
+        origin: { name: 'Earth (Replacement Dimension)' }, location: { name: 'Earth (Replacement Dimension)' },
+        image: 'https://rickandmortyapi.com/api/character/avatar/4.jpeg',
+      },
+      {
+        id: 5, name: 'Jerry Smith', status: 'Alive', species: 'Human', type: '', gender: 'Male',
+        origin: { name: 'Earth (Replacement Dimension)' }, location: { name: 'Earth (Replacement Dimension)' },
+        image: 'https://rickandmortyapi.com/api/character/avatar/5.jpeg',
+      },
+      {
+        id: 6, name: 'Abadango Cluster Princess', status: 'Alive', species: 'Alien', type: '', gender: 'Female',
+        origin: { name: 'Abadango' }, location: { name: 'Abadango' },
+        image: 'https://rickandmortyapi.com/api/character/avatar/6.jpeg',
+      },
+      {
+        id: 7, name: 'Abradolf Lincler', status: 'unknown', species: 'Human', type: 'Genetic experiment', gender: 'Male',
+        origin: { name: 'Earth (Replacement Dimension)' }, location: { name: 'Testicle Monster Dimension' },
+        image: 'https://rickandmortyapi.com/api/character/avatar/7.jpeg',
+      },
+      {
+        id: 8, name: 'Adjudicator Rick', status: 'Dead', species: 'Human', type: '', gender: 'Male',
+        origin: { name: 'unknown' }, location: { name: 'Citadel of Ricks' },
+        image: 'https://rickandmortyapi.com/api/character/avatar/8.jpeg',
+      },
+    ];
+
+    // Lo que el usuario eligió en el formulario. Es const: la variable siempre apunta al
+    // mismo objeto, pero sus propiedades sí pueden cambiar (const no congela el contenido).
+    const filtros = { texto: '', estado: '' };
+
+    // ============ 2 · LÓGICA (no toca el DOM) ============
+    // Dos filter encadenados. El select usa 'alive' y la API 'Alive': comparamos en minúsculas.
+    // { texto, estado } en los parámetros es destructuring: saca esas dos propiedades del objeto.
+    const filtrarPersonajes = (lista, { texto, estado }) => {
+      const buscado = texto.trim().toLowerCase();
+      return lista
+        .filter((p) => p.name.toLowerCase().includes(buscado))
+        .filter((p) => estado === '' || p.status.toLowerCase() === estado);
+    };
+
+    // reduce recorre la lista llevando un acumulador (total) que empieza en 0.
+    // (Saldría igual con lista.filter(…).length: reduce es para cuando el resultado es UN valor.)
+    const contarVivos = (lista) =>
+      lista.reduce((total, p) => (p.status === 'Alive' ? total + 1 : total), 0);
+
+    // ============ 3 · PRESENTACIÓN ============
+    // Cada status de la API → texto en español + clases COMPLETAS de Tailwind
+    // (nunca armadas por pedazos: Tailwind solo genera las clases que encuentra escritas enteras)
+    const ESTADOS = {
+      Alive:   { texto: 'Vivo',        clases: 'bg-emerald-100 text-emerald-700' },
+      Dead:    { texto: 'Muerto',      clases: 'bg-rose-100 text-rose-700' },
+      unknown: { texto: 'Desconocido', clases: 'bg-slate-200 text-slate-600' },
+    };
+
+    // Recibe UN personaje y devuelve el HTML de SU tarjeta: es la tarjeta de la semana 6
+    // copiada tal cual, con ${…} en cada lugar donde antes iba un dato escrito a mano.
+    const tarjetaHTML = (p) => `
+      <article class="flex flex-col overflow-hidden rounded-2xl bg-white shadow group transition hover:-translate-y-1 hover:shadow-xl dark:bg-slate-800">
+        <div class="overflow-hidden">
+          <img src="${p.image}" alt="${p.name}"
+               class="aspect-square w-full object-cover transition group-hover:scale-105">
+        </div>
+        <div class="flex flex-1 flex-col gap-2 p-4">
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white">${p.name}</h3>
+          <span class="w-fit rounded-full px-2.5 py-0.5 text-xs font-semibold ${ESTADOS[p.status].clases}">● ${ESTADOS[p.status].texto}</span>
+          <p class="text-sm text-slate-500 dark:text-slate-400">${p.species} · ${p.origin.name}</p>
+          <button type="button" data-id="${p.id}"
+                  class="mt-auto rounded-lg bg-indigo-600 py-2 font-semibold text-white transition hover:bg-indigo-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+            Ver detalle
+          </button>
+        </div>
+      </article>`;
+
+    // ============ 4 · DOM ============
+    // --- Menú móvil: mostrar/ocultar y avisar al lector de pantalla ---
+    const btnMenu = document.getElementById('btn-menu');
+    const menu = document.getElementById('menu');
+
+    btnMenu.addEventListener('click', function () {
+      menu.classList.toggle('hidden');                  // si tiene hidden se lo quita, si no se lo pone
+      const abierto = !menu.classList.contains('hidden');
+      btnMenu.setAttribute('aria-expanded', abierto);   // true / false
+    });
+
+    // --- Modal ---
+    const modal = document.getElementById('modal-detalle');
+
+    // Llena el modal con UN personaje y lo abre.
+    // Destructuring: saca siete propiedades del objeto a siete variables, en una sola línea.
+    const abrirDetalle = (personaje) => {
+      const { name, image, status, species, type, origin, location } = personaje;
+      document.getElementById('modal-nombre').textContent = name;
+      document.getElementById('modal-img').src = image;
+      document.getElementById('modal-img').alt = name;
+      document.getElementById('modal-estado').textContent = ESTADOS[status].texto;
+      document.getElementById('modal-especie').textContent = type ? `${species} (${type})` : species;
+      document.getElementById('modal-origen').textContent = origin.name;
+      document.getElementById('modal-ubicacion').textContent = location.name;
+      modal.showModal();
+    };
+
+    // Clic en el fondo oscuro: el target es el propio <dialog>, no algo de adentro
+    modal.addEventListener('click', function (e) {
+      if (e.target === modal) modal.close();
+    });
+
+    // --- Grilla ---
+    const grilla = document.querySelector('#grilla');
+    const contador = document.querySelector('#contador');
+
+    // render: ESTADO → pantalla. Ya no recibe la lista: la calcula a partir de filtros.
+    // Regla del patrón: cuando algo cambia, se cambia el estado y se llama render(). Nada más.
+    const render = () => {
+      const visibles = filtrarPersonajes(personajes, filtros);
+      if (visibles.length === 0) {
+        // Estado vacío: nunca dejes la pantalla en blanco sin explicar por qué
+        grilla.innerHTML = `<p class="col-span-full rounded-2xl bg-white p-8 text-center text-slate-500 dark:bg-slate-800 dark:text-slate-400">Ningún personaje coincide con la búsqueda.</p>`;
+      } else {
+        grilla.innerHTML = visibles.map(tarjetaHTML).join('');
+      }
+      contador.textContent =
+        `${visibles.length} de ${personajes.length} personajes · ${contarVivos(visibles)} vivos`;
+    };
+
+    // --- Buscador y filtro: cada evento cambia el ESTADO y llama a render() ---
+    const formBusqueda = document.querySelector('#form-busqueda');
+    const inputBusqueda = document.querySelector('#busqueda');
+    const selectEstado = document.querySelector('#filtro-estado');
+
+    // input se dispara con CADA tecla; evento.target es el campo y .value lo que tiene escrito
+    inputBusqueda.addEventListener('input', (evento) => {
+      filtros.texto = evento.target.value;
+      render();
+    });
+
+    // change se dispara cuando el select cambia de opción
+    selectEstado.addEventListener('change', (evento) => {
+      filtros.estado = evento.target.value;
+      render();
+    });
+
+    // Enter dentro del formulario lo envía y RECARGA la página: preventDefault lo impide
+    formBusqueda.addEventListener('submit', (evento) => evento.preventDefault());
+
+    render();
+
+    // Delegación: UN listener en la grilla, que nunca se borra. Los botones se destruyen y se
+    // crean en cada render, pero su clic "burbujea" hasta la grilla y aquí lo atrapamos.
+    grilla.addEventListener('click', (evento) => {
+      const boton = evento.target.closest('[data-id]');  // ¿el clic fue en (o dentro de) un botón con data-id?
+      if (!boton) return;                                // clic en otra parte de la grilla: nada que hacer
+      const personaje = personajes.find((p) => p.id === Number(boton.dataset.id));
+      abrirDetalle(personaje);
+    });
+  </script>
+</body>
+</html>
